@@ -30,14 +30,3 @@ RUN rails assets:precompile
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 
-#install nginx
-RUN apt-get -y install nginx
-
-# create log directory
-RUN mkdir -p /var/www/projeto/log/
-
-RUN ln -sf /dev/stdout /var/www/projeto/log/access.log && ln -sf /dev/stderr /var/www/projeto/log/error.log
-
-
-COPY ./nginx.conf /etc/nginx/conf.d/
-
