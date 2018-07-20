@@ -1,7 +1,7 @@
 FROM ruby:2.5.1
 
 ENV ESCOLA_MODELO_WS_GITHUB=https://github.com/interlegis/escolamodelo-ws.git \
-    ESCOLA_MODELO_WS_VERSION=1.1.1-1
+    ESCOLA_MODELO_WS_VERSION=1.1.1-2
 
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev && apt-get -y install apache2-utils
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs
